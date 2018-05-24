@@ -5,17 +5,17 @@ class Movie extends React.Component {
     showComponent: false
   }
 
-  _showButton2 = () => {
+  showButton2 = () => {
     return (
-      <button>_showButton2</button>
+      <button>showButton2</button>
     );
   }
 
   render() {
     return (
       <div>
-        {this.props.movie.title}
-        From Movie.js
+        <div>Test from Movie</div>
+        Title is: {this.props.movie.title}
       </div>
     );
   }
