@@ -18,7 +18,6 @@ class MovieList extends React.Component {
     return (
       <div className="MovieList">
         {this._movies()}
-        test from MovieList
       </div>
     );
   }

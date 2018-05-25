@@ -1,21 +1,35 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import MoviePage from '../MoviePage';
 
 class Movie extends React.Component {
-  state = {
-    showComponent: false
+  constructor (props) {
+    super(props)
+    this.state = {
+        showComponent: false,
+    }
+    this._onImgClick = this._onImgClick.bind(this);
   }
-
-  showButton2 = () => {
-    return (
-      <button>showButton2</button>
-    );
+  _onImgClick() {
+    this.setState({
+      showComponent: true,
+    });
   }
 
   render() {
     return (
       <div>
-        <div>Test from Movie</div>
-        Title is: {this.props.movie.title}
+        {this.state.showComponent              ?
+          <MoviePage
+            movie={this.props.movie} show={this.state.showComponent}/>  :
+          (
+            <div className="Movie">
+            <Link to={`/movie/${this.props.movie.id}`}><img alt="not sure what image" src={`http://api.themoviedb.org/3/${this.props.movie.poster_path}`  /></Link>
+            {this.props.movie.title}
+            </div>
+          )
+        }
       </div>
     );
   }

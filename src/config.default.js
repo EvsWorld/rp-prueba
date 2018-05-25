@@ -1,6 +1,5 @@
-// rename this file config.js after putting your api key in the url
+// rename this file config.js after putting your api key
 const config = {
-  movieDbDiscoverURL: `http://api.themoviedb.org/3/discover/movie?api_key=<YOUR_API_KEY_HERE>
-  `
+  api_key: `<YOUR_API_KEY_HERE>`
 }
 export default config;
