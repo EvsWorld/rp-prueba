@@ -18,7 +18,6 @@ class MoviePage extends React.Component {
     this.setState({ activeIndex: newIndex });
   }
   componentWillMount () {
-    (`Fetch movie ${this.props.match.params.id}`);
     this._fetchMovieData();
   }
   _fetchMovieData = () => {

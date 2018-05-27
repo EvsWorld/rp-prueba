@@ -35,15 +35,12 @@ class Main extends React.Component {
     .then(data => {
       ('data = ', data);
       this.setState({movies: data.results});
-      ('state.movies after fetch = ', this.state.movies);
     }).catch(err => {
       (err);
     });
   };
 
   render () {
-    (`From Main.js. 'this.state.movies': `,this.state.movies);
-
     return (
       <div className="Main">
         <input id="input" type="text" value={this.state.searchString} onChange={this._handleChange} placeholder="Search terms  here..."/>
