@@ -1,0 +1,10 @@
+.Movie {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  margin: 0.5em 0.5em;
+  background-color: rgb(39, 115, 9);
+  padding: 1em;
+  max-width: 17em;
+}

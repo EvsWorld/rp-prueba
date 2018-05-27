@@ -1,0 +1,7 @@
+.MovieList {
+  align-items:flex-end;
+  display: flex;
+  overflow: scroll;
+  flex-flow: row wrap;
+  justify-content:space-around;
+}

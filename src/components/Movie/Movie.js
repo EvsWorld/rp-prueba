@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import MoviePage from '../MoviePage';
+import './Movie.css'
 
 class Movie extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-        showComponent: false,
-    }
-    this._onImgClick = this._onImgClick.bind(this);
+  state = {
+      showComponent: false,
   }
+
   _onImgClick() {
     this.setState({
       showComponent: true,
@@ -22,11 +20,15 @@ class Movie extends React.Component {
       <div>
         {this.state.showComponent              ?
           <MoviePage
-            movie={this.props.movie} show={this.state.showComponent}/>  :
+            movie={this.props.movie} show={this.state.showComponent} />  :
           (
-            <div className="Movie">
-            <Link to={`/movie/${this.props.movie.id}`}><img alt="not sure what image" src={`http://api.themoviedb.org/3/${this.props.movie.poster_path}`  /></Link>
-            {this.props.movie.title}
+            // TODO: fix poster path base url
+            <div className='Movie'>
+              <Link to={`/movie/${this.props.movie.id}`}>
+                <img alt="movie poster" src={'https://image.tmdb.org/t/p/w185/'+ this.props.movie.poster_path}
+                />
+              </Link>
+              {this.props.movie.title}
             </div>
           )
         }

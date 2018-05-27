@@ -1,0 +1,12 @@
+.MoviePage {
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  margin: 1em 0;
+  background-color: rgb(39, 115, 9);
+  border: 3em solid rgb(39, 115, 9);
+  width: 100vw
+}
+.details {
+  padding: 3em;
+}
