@@ -33,7 +33,6 @@ class Main extends React.Component {
     })
     .then(response => response.json() )
     .then(data => {
-      ('data = ', data);
       this.setState({movies: data.results});
     }).catch(err => {
       (err);
