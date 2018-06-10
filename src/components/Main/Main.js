@@ -2,14 +2,23 @@ import React from 'react';
 import MovieList from '../MovieList';
 import config from '../../config.js';
 
+export const hello = () => 'Hello';
+export const button = () =>  <button>TEST BUTTON</button>
+
 class Main extends React.Component {
   state = {
     searchString: '',
-    movies: []
+    movies: [],
+    testCounter: 0,
   }
 
+  clickHandler = () => {
+    let testCounter;
+    testCounter = this.state.testCounter + 1;
+    this.setState({ testCounter })
+  }
 
-  _handleChange = (e) => {
+  handleChange = (e) => {
    this.setState({ searchString:e.target.value });
    let searchString = this.state.searchString.trim().toLowerCase();
    if (searchString.length > 0) {
@@ -20,6 +29,7 @@ class Main extends React.Component {
  }
 
   componentWillMount() {
+    // this.handleChange = this.handleChange.bind(this);
     this._fetchMovies('popular');
   }
 
@@ -39,10 +49,16 @@ class Main extends React.Component {
     });
   };
 
+
   render () {
     return (
       <div className="Main">
-        <input id="input" type="text" value={this.state.searchString} onChange={this._handleChange} placeholder="Search terms  here..."/>
+        <button onClick={this.clickHandler}/>
+        <input id="input"
+          type="text"
+          name='searchString'
+          value={this.state.searchString} onChange={this.handleChange}
+          placeholder="Search terms  here..."/>
         <MovieList style={{padding:24}}
           movies={this.state.movies}/>
       </div>
@@ -51,6 +67,7 @@ class Main extends React.Component {
 }
 
 export default Main;
+
 
 
 // mock state
