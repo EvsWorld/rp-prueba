@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import MoviePage from '../MoviePage';
 import './Movie.css'
 
 class Movie extends React.Component {
+  static propTypes = {
+    movie: PropTypes.object.isRequired,
+  }
   state = {
       showComponent: false,
   }
-
   _onImgClick() {
     this.setState({
       showComponent: true,
@@ -38,3 +41,8 @@ class Movie extends React.Component {
 }
 
 export default Movie;
+
+// Movie.propTypes = {
+//   movie: PropTypes.object.isRequired,
+//
+// }
